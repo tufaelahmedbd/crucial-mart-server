@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 //bypassed api's
-app.use("/api/user/", userRoutes);
+app.use("/api/users/", userRoutes);
 //mongodb
 mongose
   .connect(process.env.MONGO_URI, { useUnifiedTopology: true })
