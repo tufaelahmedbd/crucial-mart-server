@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    ocupation: {
+    occupation: {
       type: String,
       required: true,
     },
@@ -47,9 +47,9 @@ userSchema.statics.signup = async function (
   password,
   image,
   address,
-  ocupation
+  occupation
 ) {
-  if (!name || !email || !password || !image || !address || !ocupation) {
+  if (!name || !email || !password || !image || !address || !occupation) {
     throw new Error("All fields must be filled.");
   }
   if (!validator.isEmail(email)) {
@@ -69,7 +69,7 @@ userSchema.statics.signup = async function (
     password: hashPass,
     image,
     address,
-    ocupation,
+    occupation,
   });
   return user;
 };
